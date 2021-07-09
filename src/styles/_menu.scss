@@ -1,0 +1,22 @@
+#menu {
+    position: relative;
+    background: url("../assets/images/menu/menu-bg.png");
+    background-size: cover;
+    min-height: 61.5vh;
+
+    h1, p, a {
+        color: $brand-base;
+    }
+    
+    @include bp($desktop) {
+        min-height: 100vh;
+        background-position-y: 0%;
+    }
+
+    p {
+        text-align: center;
+        a {
+            text-decoration: underline;
+        }
+    }
+}

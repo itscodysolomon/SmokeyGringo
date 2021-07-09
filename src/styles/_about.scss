@@ -1,0 +1,26 @@
+#about {
+    position: relative;
+    background: url('../assets/images/about/smokey-food-spread-dig-in.png');
+    background-size: cover;
+    background-position: 0%;
+    min-height: 61.5vh;
+
+    @include bp($desktop) {
+        min-height: 80vh;
+        background-position-y: 75%;
+    }
+
+    p, small, h1 {
+        color: $brand-base;
+    }
+
+    .content p {
+        font-size: 1.5rem;
+        @include bp($desktop) {
+            text-align: center;
+            font-size: 2rem;
+            padding-left: 8rem;
+            padding-right: 8rem;
+        }
+    }
+}

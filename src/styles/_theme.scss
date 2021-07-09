@@ -1,0 +1,47 @@
+
+// colors
+$brand-primary: #D85332;
+$brand-secondary: #2D545B;
+$brand-accent: #9FD4D6;
+$brand-base: #FCFBEC;
+
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+@font-face {
+    font-family: "hardware";
+    src: url("../assets/fonts/DDCHardware-Compressed.otf");
+}
+
+@mixin text-copy {
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+}
+
+@mixin text-copy--bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+}
+
+@mixin text-brand {
+    font-family: "hardware", sans-serif;
+    font-weight: normal;
+}
+
+$tablet: 768px;
+$desktop: 1024px;
+
+@mixin bp ($size) {
+    @media screen and (min-width: $size) {
+        @content;
+    }
+}
+
+strong {
+    @include text-copy--bold();
+}
+
+i {
+    font-style: italic;
+}

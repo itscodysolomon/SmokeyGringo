@@ -1,0 +1,92 @@
+.modal-open .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba($brand-primary, 0.7);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .content {
+        background: $brand-base;
+        padding: 3rem;
+        margin: 4rem;
+        position: relative;
+        animation: popOut;
+        animation-duration: .25s;
+
+        @include bp($tablet) {
+            padding: 5rem;
+        }
+
+        img {
+            width: 5rem;
+        }
+
+        h1 {
+            text-align: left;
+            padding-top: 1.5rem;
+            font-size: 4rem;
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 2rem;
+            right: 2.5rem;
+            font-size: 3.6rem;
+            cursor: pointer;
+        }
+    }
+
+}
+
+.modal-open {
+    overflow: hidden;
+
+    .popup {
+        animation: fadeIn;
+        animation-duration: .25s;
+        animation-fill-mode: forwards;
+    }
+}
+
+.fade-out {
+    .popup {
+        animation: fadeOut;
+        animation-duration: .25s;
+        animation-fill-mode: forwards;
+
+        img {
+            display: none;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
